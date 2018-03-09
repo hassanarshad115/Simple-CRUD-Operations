@@ -81,7 +81,7 @@ namespace Simple_CRUD_Operations
             }
         }
 
-        private DataTable GetDataByIDMethod(int idPMv)
+        private DataTable GetDataByIDMethod(int idPMv) 
         {
             //sbsy phly datatale ka obj bnana ha jo k last m return b hoga
             DataTable dt = new DataTable();
