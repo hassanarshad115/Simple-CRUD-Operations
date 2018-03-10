@@ -40,6 +40,7 @@ namespace Simple_CRUD_Operations
         private void addNewToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //add new record pr click kro tw ak method call hoy
+            //sbsy phly dashboard bnaty ha jsmy ye ak method call hoga r method k ander kia likhna ha wo nichy method k annder dekhy
             methodInFirstForm(0, false);
         }
 
@@ -47,17 +48,20 @@ namespace Simple_CRUD_Operations
         private void methodInFirstForm(int idV, bool UpdateV)
         {
             //insert wala form open hoy r usmy jo 2 properties bnae ti unhy asy access krna ha
+            //form2 k veriables ki properties ko is method k veriables ki values assign krni ha
             Form2 obj = new Form2();
             obj.idP = idV;
             obj.isUpdateP = UpdateV;
             obj.Show();
         }
 
+
         //datagridview pr double click kr k jo event hoga..
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
             int index = dataGridView1.Rows.GetFirstRow(DataGridViewElementStates.Selected);
-            int updateObj = (int)dataGridView1.Rows[index].Cells[0].Value;
+            int updateObj = (int)dataGridView1.Rows[index].Cells[0].Value; //cells[0] he hoga q k hm id pr sp bnaygy wo access kryga sari values
+
             //jo method upser add new record ko jb click krty ha usmy bnaya ta usko yha agian call ki but obj r true pas krdia
             methodInFirstForm(updateObj, true);
             //bs datagridview ma jst ye 3 lines he likhni  ha..
